@@ -1,0 +1,350 @@
+body{
+    margin:0;
+    display:flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    background-color: yellow;
+    font-family: cursive;
+
+
+}
+
+
+
+
+.stats-container{
+    margin: 20px;
+    border: dotted green;
+    min-width:200px;
+    height:100px;
+    position: relative;
+    padding: 20px;
+
+}
+
+
+.stats-container h4{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 1px;
+
+
+}
+
+.icon{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media(max-width:600px){
+    body{
+        flex-direction: column;
+    }
+}
+
+
+.counter{
+    font-size: 50px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    color: green;
+
+}
+
+
+
+
+
+
+/*The power of viewport unit*/
+/* The days of fixed width designs and needing to only test only a handful of viewport sizes are gone, we live
+in the fluid width world with a myriad of devices size and aspect ratios, Percentage based units allowed us to accommodate the variety of possible ways our content will be viewed, but they don't work in every scenario.
+Viewport percentage units or viewport units offer an alternative "fluid" value when percentage based units prove to be inadequate, for example, viewport units can be useful
+when trying to create an equal height/width stack of elements.
+
+Viewports unit control attributes for elements on the page based on the size of the screen whereas percentage
+inherit their size from the parent elements.
+For example, height: 100%, applied to an element
+that is relative to the size of the parent, in contrast,
+height:100vh will be 100% of the viewport height regardless
+of where the element reside in the DOM.
+
+100vw: it mean 100% of viewport width , it stretch out maximum to whatever
+devices that you are having in the horizontal manner
+
+100vh: 100% of viewport height: it mean 100% of the viewport
+height, it stretch out maximum to whatever device you are having in the vertical manner.
+
+100vmin: 100% of the smallest viewport dimension.
+
+100vmax: 100% of the largest viewport dimension.
+
+flex-direction property: it specifies the direction
+of the flexible items itself. Note that if the element
+is not a flexible item, the flex-direction property
+has no effect.
+
+
+The @media rule is used in media queries to apply the different
+styles for the different media types.
+media queries can be used to check for many things, such as,
+1) the width and height of the viewport.
+2) the width and height of the device.
+3) the orientation( is the tablet/phone in landscape or
+portrait mode?)
+4) Resolution.
+
+
+What is this code trying to tell you:
+background-color: yellow;
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+
+When the width of the screen is less than 600px, it will be lightblue,
+when the width of the screen is more than 600px, it will be yellow.
+
+
+
+
+
+
+Using media queries are a popular technique for delivering the
+tailored style sheet(responsive web design) to desktops,
+laptops, tablets and even mobile phones itself.
+
+You can also use media queries to specify that certain styles
+are only for printed documents or for screen readers.
+(for example, media type: screen, speech or print)
+
+In addition to media types, there are also media features,
+media features provide even more specific details about the
+media queries, by allowing to test for a specific features
+of the user agent or display device. For example, you can apply
+styles to only the screens that are greater than or smaller
+than a certain width itself.
+
+align-items: center;
+determine how the items as a whole are aligned within the container.
+align-content: center;
+
+align-items: flex-end;
+align-items: flex-start;
+align-items: flex-center;
+align-items: flex-stretch;
+align-items: flex-baseline;
+
+justify-content: flex-end; it has no effect
+on the contents if you do not justify the 
+height of the content itself.
+
+On the other hands,
+if you set height to 100%.
+height: 100%;
+it will cause the content to be changed accordingly.
+
+Setting max-width: 600px,
+if the width of the mobile or desktop application is less than 600px, it will cause the flex-direction to be activated which is for the content to be flex in the vertical manner since you set it in column.
+
+
+CSS positioning:
+Absolute Positioning:
+1) Coordinates of the elements such as the top, right, left and bottom property.
+2) Positioned parent elements.
+
+a) Static
+b) Relative
+c) Absolute
+d) Fixed 
+e) Sticky
+
+You are always positioning your elements using the 4 keywords:
+1)Top 2) Right 3) Left 4) Bottom
+Moving an element based on the top, right, left or even bottom.
+
+.box{
+    position: relative;
+    top: 100px;
+}
+it is going to be pushed 100px from the top edge.
+or offset from the top edge 100px.
+
+Positive value will offset inward, and negative
+value will offset outward.
+
+Relative Positioning context:
+It is with relative to the original positioning itself.
+
+.box{
+    position: relative;
+    top: 100px;
+    left: -100px;
+}
+
+Relative to the original position, 
+1) it is going to move down 100px,
+2) and it is going to move left 100px.
+
+top and bottom are offsetting each other.
+left and right are offsetting each other.
+
+
+Document Flow( Block)
+Div
+Paragraph
+Lists
+They occupy the entire block of space in the horizontal manner.
+
+They force each new element to be in the next paragraph.
+
+Document Flow(inline)
+Image
+Links
+Inputs
+
+They follow the same horizontal lines when you input
+the images, links and inputs inside accordingly.
+
+If I want the images to behave like a block, 
+I can change that in CSS property accordingly.
+
+Relative positioning do not remove elements from the document flow itself. They do not modify the document
+flow visually.
+
+Absolute positioning context:
+Nearest containing element with the position:
+
+.parent{
+    position: relative;
+}
+
+.box{
+    position: absolute;
+    top: 100px;
+}
+
+there is always the parent element that come into
+play when it come to absolute positioning.
+
+It is going to move from the parent top edge.
+
+
+.box{
+    position: absolute;
+    top:500px;
+    left: 500px;
+}
+
+*Elements are removed from the document flow itself
+it will be from the box itself, it will move down 500px
+and move left 500px from the parent( which is the box itself).
+
+Absolute position removed elements from the document flow.
+
+
+The transform CSS property let you rotate,scale and skew or translate an elements, it modify the coordinate spaces of the CSS visual formatting model itself.
+
+Padding:
+The padding property in CSS
+define the innermost portion of the box model. creating space around the element content, inside of any defined margin and/or borders.
+
+
+How the CSS elements are positioned:
+Elements are then positioned using the top, right, left and bottom properties.
+However, these properties will not work unless the position property is set first.
+They also work differently depending on the position value.
+
+Position: Static:
+HTML elements are positioned static by default.
+Static positioned elements ae not affected by the top,
+bottom, left and right properties.
+
+An element with position: static; is not positioned in any special
+way, it is always positioned accordingly to the page itself.
+
+The <div> element has position: static;
+
+position: relative;
+An element with position: relative; is positioned relative to the normal position.
+
+Setting the top, right, bottom and left properties of the relatively-positioned element
+will cause it to be adjusted away from the normal position.
+Other content will not be adjusted to fit any gap left by the element.
+
+
+Position: Absolute:
+An element with position: absolute; is positioned relative
+to the nearest positioned ancestor( instead of positioned against the
+viewport, like fixed).
+
+However, if the absolute positioned element has no positioned ancestor,
+it use the document body and move along with page scrolling.
+
+Absolute positioned elements are removed from the the normal flow,
+and can overlap elements itself.
+
+
+Position: sticky;
+An element with position: sticky; is positioned based on the user scroll position.
+
+A sticky element toggle between the relative and fixed, depending on the scroll position,
+it is positioned relative until a given offset position is met in the viewport,
+then it will "stick" in place, like the position: fixed.
+
+position: fixed;
+An element with position: fixed; is positioned relative to the viewport,
+which mean it will always stay in that same place even if the page is 
+actually scrolled, the top, right, left and bottom properties are used to 
+position the element.
+
+A fixed element do not leave a gap in the page where it would normally have been located.
+
+Definition and Usage:
+The justify-content property align the flexible container items when the items
+do not use all available space on the main axis( horizontally)
+justify-content: space-around; it create space between the element.
+justify-content: space-between; it display the flex items with space between the lines
+justify-content: flex-end; it align the flex items to the end of the container.
+jutisfy-content: flex-start; it align the flex items at the beginning of the container.
+justify-content: center; items are centered to the center of the container.
+
+align-items: It is positioned vertically:
+On the other hand, use the align-items property to align the items vertically.
+The align-items property specify the default alignment of the items INSIDE the container itself.
+align-items: flex-start; items are positioned at the beginning of the container.
+align-items: flex-end; items are positioned at the end of the container.
+align-items: baseline; items are positioned at the baseline of the container.
+align-items: stretch; Items are stretched to fit the entire container.
+align-items: center; Items are positioned to the center of the container itself.
+
+
+transform: translate(X,Y or Z):
+translate(X); Define the translation, using only the value of the x axis(move horizontally).
+translate(Y); Define the translation, using only the value of the y axis(move vertically)
+translate(Z); define the translation, using only the value of the z axis( move in and out of the screen- closer or further away from the screen itself)
+
+
+transform: rotate(10 deg); rotate clockwise 10 deg
+transform: rotate(45 deg); rotate clockwise 45 deg
+transform: rotateX(45 deg); make the object smaller vertically inward on the top and bottom
+transform: rotateY(45 deg); make the object smaller horizontally inward on the left and right.
+
+CSS: wrap function for the text
+flex-wrap: nowrap;- in this case, there is no wrap at all, the text can be 2 or even 3 lines
+flex-wrap: wrap;- in this case, there is wrap, the text is only 1 code in 1 line
+flex-wrap: wrap-reverse; in this case, the elements at the first line reverse with the elements
+at the second line.
+
+
+
+
+
+
+
