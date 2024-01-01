@@ -1,0 +1,79 @@
+@import url('https://tinyurl.com/2lz2doxk');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin:0;
+    
+}
+
+.container{
+    display: flex;
+    /* Take up 90% of the entire
+    viewport port width */
+    width: 90vw;
+    
+    
+}
+
+
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: cyan;
+    cursor: pointer;
+   /* This is setting the initial flex */
+    flex: 1;
+    position: relative;
+    /* When it is flexed, you want the
+    transition to be smooth and the method is ease-in */
+    transition: flex 0.7s ease-in;
+    
+}
+
+.panel h3{
+    font-size: 24px;
+    /* This is relative to the .panel */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0px;
+    /* This is making text invisible */
+    opacity: 0;
+    
+}
+
+.panel.active{
+    /* It is growing 5 times relative
+    to the other flex items for the div with flex:5 */
+    flex: 5;
+}
+
+.panel.active h3{
+    /* This is making the div with class active
+    visible again with opacity of 1 */
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media(max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+    display: none;
+    }
+}
