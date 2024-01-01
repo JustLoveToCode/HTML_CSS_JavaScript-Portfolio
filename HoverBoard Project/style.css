@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111;
+    font-family: sans-serif;
+    /* This will bring the container
+    to the center of the page, since there is 
+    only a single container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+
+/* This will target all the div that is 
+inside the container */
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This flex-wrap and the max-width
+    come together hand in hand, once the squares
+    inside the box exceeded 400px, it will move
+    to the next line */
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.square{
+    background-color: #1d1d1d;
+    box-shadow: 0 0 2px #000;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    transition: 2s ease;
+    
+}
+
+.square:hover{
+    transition-duration: 0s;
+}
