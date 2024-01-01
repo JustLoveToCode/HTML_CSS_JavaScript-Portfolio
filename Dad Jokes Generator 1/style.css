@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box
+}
+
+body{
+    background-color: lightgray;
+    font-family: 'sans-serif';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    /* Setting the padding on the body to push it inward. */
+    padding: 50px;
+}
+
+
+.container{
+    background-color: white;
+    border-radius: 10px;
+    /* Creating the box-shadow on the container */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 50px 20px;
+    text-align: center;
+    /* Setting the width to be 100% of the viewport */
+    max-width: 100%;
+    /* Setting the fixed width of container to be 500px */
+    width: 500px;
+    
+}
+
+h1{
+    /* Take out the default margin in the Browser */
+    margin: 0;
+    opacity: 0.7;
+    letter-spacing: 1.5px;
+    
+    
+}
+
+
+.joke{
+    font-size: 40px;
+    letter-spacing: 2px;
+    line-height: 40px;
+    /* Set the margin between the element */
+    margin: 50px auto;
+    /* Setting the max-width on the .joke, if it is
+    longer than 500px, move it to the next line */
+    max-width: 500px;
+}
+
+.btn{
+    background-color: #9f68E0;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    /* Creating the box-shadow on the button */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 30px;
+    cursor: pointer;
+    
+    
+}
+
+/* When you clicked on the button, it will
+become slightly smaller*/
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline:0;
+}
