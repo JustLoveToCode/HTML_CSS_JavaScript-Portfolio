@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+
+body{
+    /* Linear Gradient is at 150 deg */
+    background-image: linear-gradient(150deg, #7d5fff, green);
+    font-family: 'Roboto', 'sans-serif';
+    /* Turn it into a flex object */
+    display: flex;
+   
+    align-items: center;
+    /* To have the justify-content, you will need to have
+    the height: 100vh;  */
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Targeting the entire search in general */
+.search{
+    position: relative;
+    height: 100px;
+    
+}
+
+
+/* Targeting just the input box */
+.search .input{
+    background-color: black;
+    color: white;
+    border:0;
+    padding: 15px;
+    font-size: 18px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+/* Targeting just the button itself */
+.btn{
+    /* Creating color for the button background */
+    background: cyan;
+    font-size: 24px;
+    cursor: pointer;
+    /* Position relative to the search bar */
+    position: absolute;
+    /* Move to the top left position relative to the search */
+    top: 0;
+    left: 0;
+    /* Creating the height and width  */
+    height: 50px;
+    width: 50px;
+    transition: transform  1s ease;
+    border-radius: 5px;
+    
+}
+
+/* Create no outline at all upon mouse focus */
+/* This is setting the CSS when they are in focus using the :focus Method */
+.btn:focus,
+.input:focus {
+  outline: none;
+}
+
+/* Increase the width of the input search box */
+/* When the search is given the class of active using the JavaScript */
+/* The width will be 200px */
+.search.active .input {
+  width: 200px;
+}
+
+/* Moving the btn to the right 198px for positive value */
+/* Moving the btn to the left for negative value */
+/* Moving the cyan button to the right by 198px */
+.search.active .btn {
+  transform: translateX(198px);
+}
