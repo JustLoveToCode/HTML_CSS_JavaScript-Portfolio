@@ -1,0 +1,9 @@
+One Day is Equivalent to 
+24 Hours * 60 minutes * 60 seconds * 1000ms
+
+One Hour is Equivalent to
+1 Hour * 60 minutes * 60 seconds * 1000ms
+
+One Minute is Equivalent to
+1 Minute * 60 seconds * 1000ms
+
