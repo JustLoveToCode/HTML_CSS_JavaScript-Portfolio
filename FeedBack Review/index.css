@@ -1,0 +1,95 @@
+body{
+    margin:0;
+    background-color: lightgreen;
+    color: darkgreen;
+    /* This display flex affect the class of
+    the container, if you do not use display flex,
+    the justify-content and align-items properties
+    cannot be used*/
+    display:flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+.rating img{
+    /* Setting the width of the img */
+    width: 40px;   
+}
+
+.container{
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rbga(0,0,0,0.3);
+    /* This make it responsive as the container width
+    will always take up 85% of the entire Viewport Width */
+    width: 85%;
+    /* The width of container can go below 400px, but will not go 
+    above 400px */
+    max-width: 400px;
+    text-align: center;
+    font-size: 20px;
+     
+}
+
+
+.heading{
+    margin: 5px;
+    font-size: 30px;
+}
+
+.ratings-container{
+    /* Display it to be horizontal, this
+    display: flex target the individual div class of rating */
+    display: flex;
+    /* Creating the padding in between the div of the image
+    and the text */
+    padding: 20px 0;
+   
+}
+
+.rating{
+  
+    cursor: pointer;
+    padding:10px;
+    margin: 10px 10px;
+}
+
+
+/* When the class of active is added
+to the rating. */
+.rating:hover,.rating.active{
+    background-color: darkseagreen;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    /* Changing the text color */
+    color: aliceblue;
+    transition: all 600ms ease;
+}
+
+.btn{
+    background-color:cyan;
+    color: aliceblue;
+    border:0;
+    margin:10px;
+    /* This create space inside the button */
+    padding: 12px 30px;
+    border-radius: 4px;
+    
+}
+
+.btn:hover{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: all 300ms ease;
+    /* When hovering over the button, scale
+    it down to 70% */
+    transform: scale(0.7);
+   
+}
+
+.btn:active{
+    /* Make the entire button smaller when 
+    it is active mode to 96%*/
+    transform: scale(0.96);
+}
